@@ -9,20 +9,14 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
 
-namespace CSharpFramework.Base
+namespace SeleniumFramework.Base
 {
     [Binding]
     public sealed class SetUp
     {
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
-        private readonly IObjectContainer objectContainer;
         private IWebDriver webDriver;
         
-        public SetUp(IObjectContainer objectContainer)
-        {
-            this.objectContainer = objectContainer;
-        }
-
         public IWebDriver DetermineBrowserType()
         {
             //Chrome by default
@@ -51,7 +45,7 @@ namespace CSharpFramework.Base
         public void BeforeScenario()
         {
             webDriver = DetermineBrowserType();
-            objectContainer.RegisterInstanceAs<IWebDriver>(webDriver);
+            ScenarioContext.Current.Add("webDriver", webDriver);
         }
 
         [AfterScenario]

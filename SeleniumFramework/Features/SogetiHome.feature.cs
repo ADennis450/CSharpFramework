@@ -71,16 +71,18 @@ namespace SeleniumFramework.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate through sogeti website")]
-        [NUnit.Framework.CategoryAttribute("Edge")]
+        [NUnit.Framework.CategoryAttribute("Chrome")]
         public virtual void NavigateThroughSogetiWebsite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate through sogeti website", null, new string[] {
-                        "Edge"});
+                        "Chrome"});
 #line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
- testRunner.Given("I am on the Sogeti home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to \"https://sogeti.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.And("I click on the \"Meet the team\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

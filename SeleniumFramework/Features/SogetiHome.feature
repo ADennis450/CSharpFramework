@@ -1,6 +1,6 @@
 ﻿Feature: SogetiHome
 
-@Edge
+@Chrome
 Scenario: Navigate through sogeti website
-	Given I am on the Sogeti home page
-	#And I click on the "Meet the team" link
+	Given I navigate to "https://sogeti.com"
+	And I click on the "Meet the team" link

@@ -2,30 +2,27 @@
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumFramework.Pages;
 
-namespace CSharpFramework.StepDefinitions
+namespace SeleniumFramework.StepDefinitions
 {
     [Binding]
     public class SogetiHomeSteps
     {
-        private readonly IWebDriver webDriver;
-        
-        public SogetiHomeSteps(IWebDriver webdriver)
+
+        SogetiHomePage homePage = new SogetiHomePage();
+
+        [Given(@"I navigate to ""(.*)""")]
+        public void GivenINavigateTo(string url)
         {
-            webDriver = webdriver;
+            homePage.Navigate(url);
         }
 
-        [Given(@"I am on the Sogeti home page")]
-        public void GivenIAmOnTheSogetiHomePage()
-        {
-            webDriver.Navigate().GoToUrl("https://sogeti.com");
-            System.Threading.Thread.Sleep(5000);
-        }
-        
         [Given(@"I click on the ""(.*)"" link")]
         public void GivenIClickOnTheLink(string p0)
         {
-            webDriver.FindElement(By.LinkText("About us")).Click();
+            homePage.aboutUs.Click();
+            System.Threading.Thread.Sleep(4000);
         }
     }
 }
