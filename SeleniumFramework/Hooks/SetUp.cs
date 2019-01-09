@@ -51,7 +51,7 @@ namespace SeleniumFramework.Base
         [AfterScenario]
         public void AfterScenario()
         {
-            webDriver.Dispose();
+            webDriver.Quit();
         }
     }
 }

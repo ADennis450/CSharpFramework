@@ -70,22 +70,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hooks\SetUp.cs" />
-    <Compile Include="Features\SogetiHome.feature.cs">
+    <Compile Include="Features\ODH.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SogetiHome.feature</DependentUpon>
+      <DependentUpon>ODH.feature</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SogetiHomePage.cs" />
+    <Compile Include="Hooks\SetUp.cs" />
+    <Compile Include="Pages\ODHAboutUSPage.cs" />
+    <Compile Include="Pages\ODHHomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\BaseSteps.cs" />
-    <Compile Include="StepDefinitions\SogetiHomeSteps.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="StepDefinitions\ODHSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\SogetiHome.feature">
+    <None Include="Features\ODH.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SogetiHome.feature.cs</LastGenOutput>
+      <LastGenOutput>ODH.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
