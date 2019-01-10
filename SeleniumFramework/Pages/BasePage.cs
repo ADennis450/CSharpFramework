@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 
 namespace SeleniumFramework.Pages
 {
     public class BasePage
     {
-       public IWebDriver webDriver;
+        public RemoteWebDriver webDriver;
         public string baseUrl; 
 
         public BasePage()
         {
-            webDriver = (IWebDriver)ScenarioContext.Current["webDriver"];
+            webDriver = (RemoteWebDriver)ScenarioContext.Current["webDriver"];
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 

@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Remote;
 
 namespace SeleniumFramework.Base
 {
@@ -15,19 +16,19 @@ namespace SeleniumFramework.Base
     public sealed class SetUp
     {
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
-        private IWebDriver webDriver;
-        
-        public IWebDriver DetermineBrowserType()
+
+        private RemoteWebDriver webDriver;
+        public RemoteWebDriver DetermineBrowserType()
         {
-            //Chrome by default
+            //Change to Case Statement
            var tagNames = ScenarioContext.Current.ScenarioInfo.Tags;
             if(tagNames.Contains("Chrome"))
             {
-                    webDriver = new ChromeDriver();   
+                webDriver = new ChromeDriver();   
             }
             else if(tagNames.Contains("Firefox"))
             {
-                    webDriver = new FirefoxDriver();
+                webDriver = new FirefoxDriver();
             }
             else if(tagNames.Contains("Edge"))
             {

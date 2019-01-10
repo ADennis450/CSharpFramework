@@ -5,20 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using OpenQA.Selenium.Remote;
 
 
 namespace SeleniumFramework.Pages
 {
     public class ODHAboutUSPage : BasePage
     {
-        private readonly IWebDriver webDriver;
+        private readonly string currentUrl;
+        RemoteWebDriver _webDriver;
 
         public ODHAboutUSPage()
         {
-            webDriver = base.webDriver;
-            webDriver.Url = base.baseUrl + "/about-us";
+            _webDriver = base.webDriver;
+            currentUrl = base.baseUrl + "/about-us";
         }
-
+        #region Selectors  
+        public IWebElement executiveBiosLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Executive Bios')]");
+        #endregion
 
     }
 }

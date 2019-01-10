@@ -5,33 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
-using System.Reflection;
+using OpenQA.Selenium.Remote;
 
 namespace SeleniumFramework.Pages
 {
     public class ODHHomePage : BasePage
     {
-        private readonly IWebDriver page;
+        RemoteWebDriver _webDriver;
 
-        #region Selectors
-        By aboutUSNavLink = By.XPath("//a[contains(text(), 'Who We Are')]");
-        #endregion
-
-        #region Selector Methods
+        #region Constructor
         public ODHHomePage()
         {
-            page = base.webDriver;
-        } 
+            _webDriver = base.webDriver;
 
-        public void GoToWelcomePage()
-        {
-            page.FindElement(aboutUSNavLink).Click();
         }
         #endregion
-
-
-
-
-
+        #region Selectors
+        public IWebElement aboutUSNavLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Who We Are')]");
+        public IWebElement knowOurProgramsNavLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Know our')]");
+        #endregion       
     }
 }

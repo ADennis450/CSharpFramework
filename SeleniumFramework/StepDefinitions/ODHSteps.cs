@@ -11,6 +11,7 @@ namespace SeleniumFramework.StepDefinitions
     public class ODHSteps
     {
         ODHHomePage homePage = new ODHHomePage();
+        ODHAboutUSPage aboutPage = new ODHAboutUSPage();
 
         [Given(@"I navigate to ""(.*)""")]
         public void GivenINavigateTo(string url)
@@ -31,9 +32,14 @@ namespace SeleniumFramework.StepDefinitions
         public void WhenIGoToTheAboutUsWelcomePage()
         {
            string title = homePage.GetTitle();
-           homePage.GoToWelcomePage();
+            homePage.aboutUSNavLink.Click();
         }
 
+        [When(@"I go to the ExectutiveBios link")]
+        public void WhenIGoToTheExectutiveBiosLink()
+        {
+            aboutPage.executiveBiosLink.Click();
+        }
 
     }
 }
