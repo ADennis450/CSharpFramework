@@ -17,10 +17,9 @@ namespace SeleniumFramework.Pages
         public ODHHomePage()
         {
             _webDriver = base.webDriver;
-
         }
         #endregion
-        #region Selectors
+        #region Element Selectors
         public IWebElement aboutUSNavLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Who We Are')]");
         public IWebElement knowOurProgramsNavLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Know our')]");
         #endregion       

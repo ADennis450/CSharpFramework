@@ -20,7 +20,7 @@ namespace SeleniumFramework.Pages
             _webDriver = base.webDriver;
             currentUrl = base.baseUrl + "/about-us";
         }
-        #region Selectors  
+        #region Element Selectors
         public IWebElement executiveBiosLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Executive Bios')]");
         #endregion
 
