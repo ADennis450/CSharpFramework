@@ -85,6 +85,8 @@ testRunner.Given("I navigate to \"https://odh.ohio.gov\"", ((string)(null)), ((T
 testRunner.When("I go to the About Us Welcome Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
 testRunner.And("I go to the ExectutiveBios link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.Then("I should see the header with the text \"Executive Bios\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

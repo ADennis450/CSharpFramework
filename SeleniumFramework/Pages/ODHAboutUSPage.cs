@@ -22,6 +22,7 @@ namespace SeleniumFramework.Pages
         }
         #region Element Selectors
         public IWebElement executiveBiosLink => _webDriver.FindElementByXPath("//a[contains(text(), 'Executive Bios')]");
+        public IWebElement executiveBiosHeader => _webDriver.FindElementByXPath("//div[contains(text(), 'Executive Bios')]");
         #endregion
 
     }

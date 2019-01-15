@@ -35,11 +35,19 @@ namespace SeleniumFramework.StepDefinitions
             homePage.aboutUSNavLink.Click();
         }
 
+        [Then(@"I should see the header with the text ""(.*)""")]
+        public void ThenIShouldSeeTheHeaderWithTheText(string text)
+        {
+            Assert.AreEqual(aboutPage.executiveBiosHeader.Text, text);
+        }
+
+
         [When(@"I go to the ExectutiveBios link")]
         public void WhenIGoToTheExectutiveBiosLink()
         {
             aboutPage.executiveBiosLink.Click();
         }
+
 
     }
 }
