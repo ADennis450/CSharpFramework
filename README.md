@@ -1,2 +1,2 @@
 # CSharpFramework
-A C# Specflow diagram
+A C# Specflow Selenium Automation Framework
